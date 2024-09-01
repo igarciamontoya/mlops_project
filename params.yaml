@@ -1,0 +1,8 @@
+features:  
+    # chi2percentile: 50
+    city: "Valencia"
+    data_path: data/weather_features.csv
+    fourier_order: 10
+    cv_initial: "730 days"
+    cv_period: "180 days"
+    cv_horizon: "365 days"

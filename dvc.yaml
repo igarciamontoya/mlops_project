@@ -1,0 +1,28 @@
+stages:
+  prepare:
+    cmd: python data_processing.py
+    deps:
+      - data/weather_features.csv
+      - data_processing.py
+    outs:
+      - data/preprocessed_data.csv
+    params: 
+      - features.city
+      - features.data_path
+  modelling:
+    cmd: python basic_modelling.py
+    deps:
+      - data/preprocessed_data.csv
+      - basic_modelling.py
+    outs:
+      - model/prophet.pkl
+      - fig/forecast_plot.png
+      - output/forecast_1y.csv
+      - output/forecast_cross_validation.csv
+      - output/forecast_performance_metrics.csv
+    params: 
+      - features.city
+      - features.fourier_order
+      - features.cv_initial
+      - features.cv_period
+      - features.cv_horizon
