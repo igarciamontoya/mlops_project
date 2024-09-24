@@ -22,12 +22,12 @@ def preprocessing(data_path,city):
     daily_madrid = daily_average[daily_average['city_name']==city]
     model_data=daily_madrid.rename(columns={'date': 'ds', 'temp': 'y'}).reset_index()
     
-    model_data.to_csv('data/preprocessed_data.csv' index=False)
+    model_data.to_csv('data/preprocessed_data.csv', index=False)
 
 
     
-if __name__=="__main__":
-    params = yaml.safe_load(open("params.yaml"))["features"]
-    data_path = params["data_path"]
-    city_name = params["city"]
-    preprocessing(data_path,city_name)
+# if __name__=="__main__":
+#     params = yaml.safe_load(open("params.yaml"))["features"]
+#     data_path = params["data_path"]
+#     city_name = params["city"]
+#     preprocessing(data_path,city_name)
