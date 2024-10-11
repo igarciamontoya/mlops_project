@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prophet Prediction</title>
+</head>
+<body>
+    <h1>Prophet Model Prediction</h1>
+
+    <form action="/predict" method="post">
+        <!-- Dropdown for selecting the variable -->
+        <label for="variable">Select a variable:</label>
+        <select id="variable" name="variable">
+            {% for variable in variables %}
+                <option value="{{ variable }}" {% if selected_variable == variable %}selected{% endif %}>{{ variable }}</option>
+            {% endfor %}
+        </select>
+
+        <!-- Input for the date -->
+        <label for="date">Enter a date (YYYY-MM-DD):</label>
+        <input type="date" id="date" name="date" value="{{ selected_date }}" required>
+        <small>Date must be within the next 365 days.</small>
+
+        <br><br>
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction %}
+        <h2>Prediction: {{ prediction }}</h2>
+    {% endif %}
+
+    {% if error %}
+        <h2 style="color: red;">Error: {{ error }}</h2>
+    {% endif %}
+</body>
+</html>

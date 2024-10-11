@@ -1,0 +1,19 @@
+Project id : mlops-final-project-438212
+<instance-name>: mlops-final-instance
+<username>: final-irene
+<password>:final-password
+<db-name>: final-database
+<bucket-name>: mlops-igm-final-project-bucket
+
+<repo-name>: final-artifacts
+<acct-name>: final-igm-account
+ipAddress: 34.102.89.241
+
+
+
+gcloud config set project mlops-final-project-438212
+docker build -t gcr.io/mlops-final-project-438212/fastapi .  #####--platform linux/amd64
+-----docker run gcr.io/mlops-final-project-438212/fastapi
+gcloud builds submit --tag gcr.io/mlops-final-project-438212/fastapi
+
+gcloud run deploy fastapi --image gcr.io/mlops-final-project-438212/fastapi --platform managed --region us-west2 --allow-unauthenticated

@@ -1,0 +1,7 @@
+uvicorn==0.31.0
+fastapi==0.115.0
+prophet
+metaflow==2.12.22
+mlflow==2.16.2
+numpy==1.26.4
+pandas==2.2.3
