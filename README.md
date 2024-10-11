@@ -7,7 +7,7 @@ The purpose of this project is feed a simple Prohpet model the last twenty year 
 
 This basic graph summarizes the framework and tools used in this project:
 
-![My framework](./img/framework.png)
+<img src="./img/framework.png" alt="My Image" width="300"/>
 
 ### Great Expectations
 
@@ -15,21 +15,21 @@ When the data is pulled from the API that is sourced from, it is processed in th
 
 There are 31 test in total that the data needs to pass with a 100% success rate:
 
-![My framework](./img/gx.png)
+<img src="./img/gx.png" alt="My Image" width="300"/>
 
 ### ML Flow
 
 When the data is ready, the Metaflow training job starts. It is connected to a running container in GCP with MLFlow running.
 
-![My framework](./img/mlflow1.png)
+<img src="./img/mlflow1.png" alt="My Image" width="300"/>
 
 Experiments are done on each of the weather variables and the best model for each is registered:
 
-![My framework](./img/mlflow2.png)
+<img src="./img/mlflow2.png" alt="My Image" width="300"/>
 
 Each model is recorded along with a collection of artifacts, including a plo png of the data + predictions, a model pickle file and the csv data file the model was trained on.
 
-![My framework](./img/mlflow3.png)
+<img src="./img/mlflow3.png" alt="My Image" width="300"/>
 
 
 
