@@ -31,6 +31,13 @@ Each model is recorded along with a collection of artifacts, including a plo png
 
 <img src="./img/mlflow3.png" alt="My Image" width="300"/>
 
+### FastAPI
+
+In a second container, we are running a FastAPI app that connects with our GCP bucket. 
+We can send a POST request to the FASTapi specifying what variable we want to make a prediction on and the data of the prediction. The data needs to be in the next 365 days and have "YYYY-MM-DD" format.
+
+
+
 
 
 
