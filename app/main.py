@@ -80,7 +80,7 @@ async def make_prediction(data : request_body):
     future = model.make_future_dataframe(periods=365)
     
     forecast = model.predict(future)
-    num_days = int(abs(datetime.strptime(date_value, "%Y-%m-%d") - datetime.now()))
-    return {'Variable': data['variable'], 'Prediction2': forecast.iloc[num_days]}
+    num_days = int(abs(datetime.strptime(date_value, "%Y-%m-%d") - datetime.now())) - 365
+    return {'Variable': data['variable'], 'Prediction2': forecast.yhat.iloc[num_days]}
 
     
