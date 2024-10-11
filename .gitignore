@@ -1,1 +1,6 @@
-/basic_prophet.ipynb
+/output/
+/data/*.csv
+/.metaflow/
+/mlruns/
+sa-private-key.json
+.ipynb_checkpoints/*
